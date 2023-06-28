@@ -7,8 +7,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HomeController {
 
-    @Value("Spring")
+    @Value("${topic}")
     private String topicName;
+
+    @Value("${student.name}")
+    public String couchName;
 
     @GetMapping("/")
     public String sayHello() {
@@ -23,6 +26,11 @@ public class HomeController {
     @GetMapping("/topic")
     public String getTopic() {
         return "Topic " + topicName;
+    }
+
+    @GetMapping("/teamname")
+    public String getTeamname() {
+        return "Topic: " + couchName;
     }
 
 }
