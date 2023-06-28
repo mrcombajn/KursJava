@@ -19,7 +19,7 @@ public class Main {
 
         book1.setPrice(1);
         System.out.println(book1);
-        
+
         System.out.println(Book.getObjectsCount());
 
         try {
@@ -27,6 +27,5 @@ public class Main {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-
     }
 }
