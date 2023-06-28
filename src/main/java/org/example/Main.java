@@ -16,7 +16,7 @@ public class Main {
         System.out.println("Book2 == Book3: " + book2.equals(book3));
         book3.reduceBookCount(1);
         System.out.println("Book2 == Book3 after reduce: " + book2.equals(book3));
-
+\
         book1.setPrice(1);
         System.out.println(book1);
 
