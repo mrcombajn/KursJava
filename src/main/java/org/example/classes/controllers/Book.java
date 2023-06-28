@@ -1,4 +1,4 @@
-package org.example.classes.examples;
+package org.example.classes.controllers;
 
 import lombok.Getter;
 
@@ -39,12 +39,12 @@ public class Book {
         objectsCount++;
     }
 
-    public void setPrice(int price) {
-        if (price >= 5)
-            this.price = new BigDecimal(price);
+    public void setPrice(BigDecimal price) {
+        if (price.compareTo(new BigDecimal("5")) >= 0)
+            this.price = price;
     }
 
-    public void reduceBookCount(int quantity) {
+    public void reduceBookCount(long quantity) {
         if (quantity > this.quantity) {
             System.out.println("Cannot reduce book number.");
             return;
