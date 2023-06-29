@@ -1,6 +1,6 @@
-package org.example.factoryExamples.dialogs;
+package pl.nonSpringExamples.factoryExamples.dialogs;
 
-import org.example.factoryExamples.button.Button;
+import pl.nonSpringExamples.factoryExamples.button.Button;
 
 public abstract class Dialog {
 

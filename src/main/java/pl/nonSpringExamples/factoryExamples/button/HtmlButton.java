@@ -1,4 +1,4 @@
-package org.example.factoryExamples.button;
+package pl.nonSpringExamples.factoryExamples.button;
 
 public class HtmlButton implements Button {
     @Override

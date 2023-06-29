@@ -1,8 +1,8 @@
-package org.example.factoryExamples;
+package pl.nonSpringExamples.factoryExamples;
 
-import org.example.factoryExamples.dialogs.Dialog;
-import org.example.factoryExamples.dialogs.WebDialog;
-import org.example.factoryExamples.dialogs.WindowsDialog;
+import pl.nonSpringExamples.factoryExamples.dialogs.Dialog;
+import pl.nonSpringExamples.factoryExamples.dialogs.WebDialog;
+import pl.nonSpringExamples.factoryExamples.dialogs.WindowsDialog;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.

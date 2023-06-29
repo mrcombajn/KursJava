@@ -1,4 +1,4 @@
-package org.example.factoryExamples.button;
+package pl.nonSpringExamples.factoryExamples.button;
 
 public interface Button {
 
