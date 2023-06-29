@@ -2,6 +2,7 @@ package org.example.controllers;
 
 import org.example.beans.Coach;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,7 +12,7 @@ public class DemoController {
     private Coach myCouch;
 
     @Autowired
-    public DemoController(Coach coach) {
+    public DemoController(@Qualifier("newCoach")  Coach coach) {
         this.myCouch = coach;
     }
 
@@ -19,4 +20,5 @@ public class DemoController {
     String getWorkout() {
         return myCouch.getWorkout();
     }
+
 }

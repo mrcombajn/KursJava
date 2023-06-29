@@ -1,16 +1,14 @@
-package org.example.beans;
+package pl.additionalBeansToScan;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
-import org.springframework.context.annotation.Primary;
+import org.example.beans.Coach;
 import org.springframework.stereotype.Component;
 
-// @Qualifier jest ważniejszy od @Primary
 @Component
-@Primary
-public class TennisCoach implements Coach {
+public class NewCoach implements Coach {
 
-    public TennisCoach() {
+    public NewCoach() {
         System.out.println(this.getClass().getSimpleName());
     }
 
@@ -26,6 +24,6 @@ public class TennisCoach implements Coach {
 
     @Override
     public String getWorkout() {
-        return "Do ...";
+        return "Hello I'm new coach";
     }
 }

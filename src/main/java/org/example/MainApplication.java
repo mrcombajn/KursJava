@@ -4,7 +4,7 @@ package org.example;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication(scanBasePackages = {"org.example", "pl.additionalDirectory"})
+@SpringBootApplication(scanBasePackages = {"org.example", "pl.additionalBeansToScan"})
 public class MainApplication {
     public static void main(String[] args) {
         SpringApplication.run(MainApplication.class, args);
