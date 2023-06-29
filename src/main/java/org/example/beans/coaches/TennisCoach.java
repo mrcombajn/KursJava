@@ -1,7 +1,8 @@
-package org.example.beans;
+package org.example.beans.coaches;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
+import org.example.beans.coaches.Coach;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;

@@ -2,7 +2,7 @@ package pl.additionalBeansToScan;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
-import org.example.beans.Coach;
+import org.example.beans.coaches.Coach;
 import org.springframework.stereotype.Component;
 
 @Component

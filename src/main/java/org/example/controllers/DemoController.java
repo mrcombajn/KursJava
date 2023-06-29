@@ -1,6 +1,6 @@
 package org.example.controllers;
 
-import org.example.beans.Coach;
+import org.example.beans.coaches.Coach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
