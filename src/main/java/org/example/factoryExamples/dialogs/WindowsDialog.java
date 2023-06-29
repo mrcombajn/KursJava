@@ -1,7 +1,8 @@
-package org.example.dialogs;
+package org.example.factoryExamples.dialogs;
 
-import org.example.button.Button;
-import org.example.button.WindowsButton;
+
+import org.example.factoryExamples.button.Button;
+import org.example.factoryExamples.button.WindowsButton;
 
 public class WindowsDialog extends Dialog {
 

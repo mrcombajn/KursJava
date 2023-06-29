@@ -1,7 +1,9 @@
-package org.example.dialogs;
+package org.example.factoryExamples.dialogs;
 
-import org.example.button.Button;
-import org.example.button.HtmlButton;
+
+import org.example.factoryExamples.button.Button;
+import org.example.factoryExamples.button.HtmlButton;
+
 
 public class WebDialog extends Dialog {
 
