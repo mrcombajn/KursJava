@@ -12,6 +12,8 @@ public class DemoController {
     private Coach myCouch;
     private Coach myCouch2;
 
+
+    //by default both coaches are singletons
     @Autowired
     public DemoController(@Qualifier("newCoach")  Coach coach, @Qualifier("newCoach") Coach coach2) {
         this.myCouch = coach;
@@ -25,6 +27,6 @@ public class DemoController {
 
     @GetMapping("/check")
     String getSingletonBeans() {
-        return String.valueOf(myCouch == myCouch2);
+        return "Comparing beans: myCouch == myCouch2, " + (myCouch == myCouch2);
     }
 }
