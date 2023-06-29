@@ -10,10 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoController {
 
     private Coach myCouch;
+    private Coach myCouch2;
 
     @Autowired
-    public DemoController(@Qualifier("newCoach")  Coach coach) {
+    public DemoController(@Qualifier("newCoach")  Coach coach, @Qualifier("newCoach") Coach coach2) {
         this.myCouch = coach;
+        this.myCouch2 = coach2;
     }
 
     @GetMapping("/workout")
@@ -21,4 +23,8 @@ public class DemoController {
         return myCouch.getWorkout();
     }
 
+    @GetMapping("/check")
+    String getSingletonBeans() {
+        return String.valueOf(myCouch == myCouch2);
+    }
 }

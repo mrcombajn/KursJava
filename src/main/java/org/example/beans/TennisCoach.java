@@ -2,12 +2,16 @@ package org.example.beans;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 // @Qualifier jest ważniejszy od @Primary
+//defaultowo inicjalizacja nie jest leniwa
+
 @Component
 @Primary
+@Lazy
 public class TennisCoach implements Coach {
 
     public TennisCoach() {
