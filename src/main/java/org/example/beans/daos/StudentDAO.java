@@ -12,4 +12,6 @@ public interface StudentDAO {
     List<Student> getAllStudents();
 
     List<Student> findStudentByLastName(String lastName);
+
+    boolean updateStudentFirstNameById(Integer id, String newName);
 }

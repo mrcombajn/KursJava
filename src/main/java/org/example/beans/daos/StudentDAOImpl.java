@@ -43,4 +43,19 @@ public class StudentDAOImpl implements StudentDAO {
     }
 
 
+    // important - set @Transactional because we're updating table record
+    @Override
+    @Transactional
+    public boolean updateStudentFirstNameById(Integer id, String newName) {
+        Student student = entityManager.find(Student.class, id);
+
+        if (student == null)
+            return false;
+
+        System.out.println(student);
+        entityManager.merge(student);
+        return true;
+    }
+
+
 }

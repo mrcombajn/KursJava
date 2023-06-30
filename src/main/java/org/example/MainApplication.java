@@ -2,14 +2,15 @@ package org.example;
 
 
 import org.example.beans.daos.StudentDAO;
+
 import org.example.entity.Student;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 import java.util.List;
-import java.util.Scanner;
 
 @SpringBootApplication(scanBasePackages = {"org.example", "pl.additionalBeansToScan"})
 public class MainApplication {
@@ -19,7 +20,7 @@ public class MainApplication {
 
     @Bean
     public CommandLineRunner commandLineRunner (StudentDAO studentDAO) {
-        return runner -> getStudentsByLastName(studentDAO);
+        return runner -> updateStudentFirstNameById(studentDAO);
     }
 
     private void createStudent(StudentDAO studentDAO) {
@@ -61,11 +62,22 @@ public class MainApplication {
 
 
     private void getStudentsByLastName(StudentDAO studentDAO) {
-        System.out.println("Please type last name below:");
-        Scanner scanner = new Scanner(System.in);
-        String lastName = scanner.next();
-        List<Student> students = studentDAO.findStudentByLastName(lastName);
+        List<Student> students = studentDAO.findStudentByLastName("Zablotna");
 
         students.forEach(System.out::println);
+    }
+
+    private void updateStudentFirstNameById(StudentDAO studentDAO) {
+        boolean actionSucced = studentDAO.updateStudentFirstNameById(1, "Olga");
+
+        if(actionSucced)
+            System.out.println("Update opperation succeed.");
+        else {
+            System.out.println("Update operation failed.");
+            return;
+        }
+
+        Student updatedStudent = studentDAO.readStudent(1);
+        System.out.println(updatedStudent);
     }
 }
