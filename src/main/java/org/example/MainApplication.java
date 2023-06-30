@@ -14,8 +14,9 @@ public class MainApplication {
         SpringApplication.run(MainApplication.class, args);
     }
 
+    @Bean
     public CommandLineRunner commandLineRunner (StudentDAO studentDAO) {
-        return runner -> createStudent(studentDAO);
+        return runner -> findStudentById(studentDAO);
     }
 
     private void createStudent(StudentDAO studentDAO) {
@@ -34,6 +35,19 @@ public class MainApplication {
         System.out.println("saved Student" + tempStudent.getId());
         System.out.println("saved Student" + tempStudent2.getId());
         System.out.println("saved Student" + tempStudent3.getId());
-        System.out.println("saved Student"+ tempStudent4.getId());
+        System.out.println("saved Student" + tempStudent4.getId());
     }
+
+    private void findStudentById(StudentDAO studentDAO) {
+        try {
+            Student student = studentDAO.readStudent(1);
+            System.out.println(student);
+
+            Student student1 = studentDAO.readStudent(14);
+            System.out.println(student1);
+        } catch(Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
 }
