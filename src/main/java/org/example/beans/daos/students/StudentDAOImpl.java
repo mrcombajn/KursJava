@@ -1,8 +1,8 @@
-package org.example.beans.daos;
+package org.example.beans.daos.students;
 
 import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
-import org.example.entity.Student;
+import org.example.entities.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 

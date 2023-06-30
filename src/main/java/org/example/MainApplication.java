@@ -1,9 +1,9 @@
 package org.example;
 
 
-import org.example.beans.daos.StudentDAO;
+import org.example.beans.daos.students.StudentDAO;
 
-import org.example.entity.Student;
+import org.example.entities.Student;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -20,7 +20,7 @@ public class MainApplication {
 
     @Bean
     public CommandLineRunner commandLineRunner (StudentDAO studentDAO) {
-        return runner -> deleteAllStudents(studentDAO);
+        return runner -> createStudent(studentDAO);
     }
 
     private void createStudent(StudentDAO studentDAO) {

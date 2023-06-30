@@ -1,5 +1,4 @@
-package org.example.entity;
-
+package org.example.entities;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -13,10 +12,10 @@ import lombok.ToString;
 @ToString
 @Getter
 @Setter
-public class Student {
+public class Employee {
 
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column (name = "id")
     private int id;
 
@@ -29,7 +28,7 @@ public class Student {
     @Column (name = "email")
     private String email;
 
-    public Student (String firstName, String last_name, String email) {
+    public Employee (String firstName, String last_name, String email) {
         this.firstName = firstName;
         this.last_name = last_name;
         this.email = email;

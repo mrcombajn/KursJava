@@ -1,6 +1,6 @@
-package org.example.beans.daos;
+package org.example.beans.daos.students;
 
-import org.example.entity.Student;
+import org.example.entities.Student;
 import java.util.List;
 
 public interface StudentDAO {
