@@ -52,7 +52,7 @@ public class StudentDAOImpl implements StudentDAO {
         if (student == null)
             return false;
 
-        System.out.println(student);
+        student.setFirstName(newName);
         entityManager.merge(student);
         return true;
     }

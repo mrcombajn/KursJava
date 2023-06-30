@@ -68,16 +68,16 @@ public class MainApplication {
     }
 
     private void updateStudentFirstNameById(StudentDAO studentDAO) {
-        boolean actionSucced = studentDAO.updateStudentFirstNameById(1, "Olga");
+        boolean operationSucceed = studentDAO.updateStudentFirstNameById(3, "Patryk");
 
-        if(actionSucced)
+        if(operationSucceed)
             System.out.println("Update opperation succeed.");
         else {
             System.out.println("Update operation failed.");
             return;
         }
 
-        Student updatedStudent = studentDAO.readStudent(1);
+        Student updatedStudent = studentDAO.readStudent(3);
         System.out.println(updatedStudent);
     }
 }
