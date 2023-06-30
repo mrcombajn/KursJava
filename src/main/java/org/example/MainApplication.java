@@ -20,7 +20,7 @@ public class MainApplication {
 
     @Bean
     public CommandLineRunner commandLineRunner (StudentDAO studentDAO) {
-        return runner -> updateStudentFirstNameById(studentDAO);
+        return runner -> deleteAllStudents(studentDAO);
     }
 
     private void createStudent(StudentDAO studentDAO) {
@@ -79,5 +79,15 @@ public class MainApplication {
 
         Student updatedStudent = studentDAO.readStudent(3);
         System.out.println(updatedStudent);
+    }
+
+    private void deleteStudent(StudentDAO studentDAO) {
+        studentDAO.deleteStudent(1);
+
+        getAllStudents(studentDAO);
+    }
+
+    private void deleteAllStudents(StudentDAO studentDAO) {
+        System.out.println("Deleted records: " + studentDAO.deleteAllStudents());
     }
 }

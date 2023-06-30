@@ -57,5 +57,21 @@ public class StudentDAOImpl implements StudentDAO {
         return true;
     }
 
+    @Override
+    @Transactional
+    public void deleteStudent(Integer id) throws NullPointerException{
+        Student student = readStudent(id);
+        if (student == null)
+            throw new NullPointerException("Student is null");
+
+        entityManager.remove(student);
+    }
+
+    @Override
+    @Transactional
+    public int deleteAllStudents() {
+        return entityManager.createQuery("DELETE FROM Student").executeUpdate();
+    }
+
 
 }
