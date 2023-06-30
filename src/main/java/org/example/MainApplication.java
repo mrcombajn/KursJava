@@ -8,6 +8,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.util.List;
+import java.util.Scanner;
+
 @SpringBootApplication(scanBasePackages = {"org.example", "pl.additionalBeansToScan"})
 public class MainApplication {
     public static void main(String[] args) {
@@ -16,7 +19,7 @@ public class MainApplication {
 
     @Bean
     public CommandLineRunner commandLineRunner (StudentDAO studentDAO) {
-        return runner -> findStudentById(studentDAO);
+        return runner -> getStudentsByLastName(studentDAO);
     }
 
     private void createStudent(StudentDAO studentDAO) {
@@ -50,4 +53,19 @@ public class MainApplication {
         }
     }
 
+    private void getAllStudents(StudentDAO studentDAO) {
+        List<Student> students = studentDAO.getAllStudents();
+
+        students.forEach(System.out::println);
+    }
+
+
+    private void getStudentsByLastName(StudentDAO studentDAO) {
+        System.out.println("Please type last name below:");
+        Scanner scanner = new Scanner(System.in);
+        String lastName = scanner.next();
+        List<Student> students = studentDAO.findStudentByLastName(lastName);
+
+        students.forEach(System.out::println);
+    }
 }

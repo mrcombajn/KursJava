@@ -6,10 +6,12 @@ import org.example.entity.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public class StudentDAOImpl implements StudentDAO {
 
-    private EntityManager entityManager;
+    private final EntityManager entityManager;
 
     @Autowired
     public StudentDAOImpl(EntityManager entityManager) {
@@ -26,4 +28,19 @@ public class StudentDAOImpl implements StudentDAO {
     public Student readStudent(Integer id) {
         return entityManager.find(Student.class, id);
     }
+
+    @Override
+    public List<Student> getAllStudents() {
+        return entityManager.createQuery("FROM Student", Student.class).getResultList();
+    }
+
+    @Override
+    public List<Student> findStudentByLastName(String lastName) {
+        return entityManager
+                .createQuery("FROM Student WHERE last_name=:lastName", Student.class)
+                .setParameter("lastName", lastName)
+                .getResultList();
+    }
+
+
 }
